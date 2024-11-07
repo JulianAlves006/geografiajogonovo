@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Jogo de Perguntas</title>
+</head>
+<body>
+    <div class="container">
+        <h1>O jogo acabou! Sua pontuação maxima foi:</h1>
+        <h1 id="pontoMaximo"></h1>
+    </div>
+
+    <script>
+        function getParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Captura o valor do parâmetro "valor" e exibe no HTML
+        const valorRecebido = getParam("valor");
+        document.getElementById("pontoMaximo").textContent = valorRecebido;
+    </script>
+</body>
+</html>
