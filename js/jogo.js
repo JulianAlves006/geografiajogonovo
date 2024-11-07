@@ -44,6 +44,7 @@ const perguntasMostradas = { facil: [], medio: [], dificil: [] };
       // Exibe a pergunta e as opções de resposta
       document.getElementById('pergunta').textContent = perguntaSelecionada.pergunta;
       const opcoesContainer = document.getElementById('opcoes');
+      document.getElementById('opcoes').style.display = 'block';
       opcoesContainer.innerHTML = '';  // Limpa opções anteriores
 
       perguntaSelecionada.opcoes.forEach(opcao => {
