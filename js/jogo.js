@@ -7,8 +7,6 @@ const perguntasMaximas = document.getElementById('maximoPerguntas');
 perguntasMaximas.innerHTML = maximoPerguntas;
 
 function verificarContador() {
-  // Exibe o valor atual do contado
-  console.log(maximoPerguntas);
   if (maximoPerguntas <= 0) {
     // Redireciona para outra página quando o contador atinge zero
     window.location.href = `./resultado.html?valor=${encodeURIComponent(pontuacao)}`; 
@@ -16,7 +14,7 @@ function verificarContador() {
 }
 
 
-setInterval(verificarContador, 1000);
+setInterval(verificarContador, 300);
 
 const perguntas = {
     facil: [
@@ -38,8 +36,6 @@ const perguntas = {
 const perguntasMostradas = { facil: [], medio: [], dificil: [] };
 
     function mostrarPergunta() {
-      maximoPerguntas = maximoPerguntas - 1;
-      perguntasMaximas.innerHTML = maximoPerguntas;
 
       const dificuldade = document.querySelector('input[name="dificuldade"]:checked');
       
@@ -83,7 +79,9 @@ const perguntasMostradas = { facil: [], medio: [], dificil: [] };
     }
 
     function verificarResposta(opcaoSelecionada, respostaCorreta) {
-  
+      maximoPerguntas = maximoPerguntas - 1;
+      perguntasMaximas.innerHTML = maximoPerguntas;
+
       const dificuldade = document.querySelector('input[name="dificuldade"]:checked');
       const nivel = dificuldade.value;
       const resultado = document.getElementById('resultado');
